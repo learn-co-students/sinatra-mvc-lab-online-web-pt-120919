@@ -1,7 +1,15 @@
 require 'pry'
 class PigLatinizer
+  
+   def piglatinize(user_phrase)
+    if user_phrase.split(" ").lenght == 1 
+      piglatinize(user_phrase)
+    else 
+      to_pig_latin(user_phrase)
+    end 
+   end 
 
-  def piglatinize(user_phrase)
+  def piglatinize_word(user_phrase)
     @new_word = user_phrase.split("")
     vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
     if vowels.include?(@new_word[0])
